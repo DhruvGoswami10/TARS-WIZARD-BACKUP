@@ -1523,217 +1523,167 @@ spline-viewer {
 }
 
 .download-section-minimal {
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    background-color: rgba(10, 10, 15, 0.6); /* Dark background */
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Dark theme border */
+    max-width: 960px;
+    margin: 0 auto 32px;
+    padding: 32px 24px;
+    background: rgba(12, 12, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
 }
 
 .download-section-minimal h2 {
-    text-align: center;
-    font-size: 2em;
-    color: var(--text-light); /* Light text */
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Dark theme border */
-    padding-bottom: 10px;
-    display: inline-block; /* Center the border */
+    font-size: 1.9em;
+    color: var(--text-light);
+    margin-bottom: 12px;
 }
 
 .download-section-minimal > p {
-    text-align: center;
-    color: var(--text-medium); /* Medium light text */
-    margin-bottom: 30px;
-    font-size: 1.1em;
+    margin: 0 0 24px;
+    color: var(--text-medium);
+    font-size: 1.05em;
 }
 
-.minimal-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 25px;
-    justify-content: center;
-}
-
-.minimal-card {
-    background-color: rgba(26, 26, 47, 0.4); /* Dark card background */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Dark theme border */
-    border-radius: 8px;
-    padding: 20px;
+.resource-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes footer down */
-    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    gap: 18px;
 }
 
-.minimal-card:hover {
-    background-color: rgba(26, 26, 47, 0.6); /* Slightly lighter dark on hover */
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-3px);
-}
-
-.minimal-card h3 {
-    font-size: 1.4em;
-    color: var(--text-light); /* Light text */
-    margin-bottom: 10px;
-}
-
-.minimal-card p {
-    font-size: 1em;
-    color: var(--text-medium); /* Medium light text */
-    flex-grow: 1; /* Allows paragraph to take available space */
-    margin-bottom: 15px;
-}
-
-.card-footer {
+.resource-item {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: auto; /* Pushes footer to bottom */
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Dark theme border */
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.minimal-btn {
-    display: inline-flex; /* Align icon and text */
+.resource-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resource-text {
+    flex: 1 1 60%;
+}
+
+.resource-title {
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 4px;
+}
+
+.resource-description {
+    display: block;
+    font-size: 0.95em;
+    color: var(--text-medium);
+}
+
+.resource-link {
+    display: inline-flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
-    padding: 10px 18px;
-    background-color: var(--accent-gold); /* Use accent color */
-    color: var(--background-dark); /* Dark text for contrast */
-    border: none;
-    border-radius: 5px;
+    justify-content: center;
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-decoration: none;
     font-size: 0.95em;
     font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-light);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.minimal-btn:hover {
-    background-color: #fff; /* Lighter gold/white on hover */
-    box-shadow: 0 2px 5px rgba(255, 211, 77, 0.2); /* Subtle gold shadow */
+.resource-link:hover {
+    background: var(--accent-gold);
+    color: var(--background-dark);
+    border-color: var(--accent-gold);
 }
 
-.minimal-btn svg path {
-    stroke: var(--background-dark); /* Dark stroke for contrast */
-}
-.minimal-btn svg g[stroke="#ffffff"] path { /* More specific selector if needed */
-    stroke: var(--background-dark); /* Dark stroke for contrast */
-}
-
-.view-btn {
-    background-color: var(--accent-blue); /* Use blue accent */
-    color: var(--text-light); /* Light text */
+.component-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px 24px;
 }
 
-.view-btn:hover {
-    background-color: #6caeff; /* Lighter blue */
-}
-
-.view-btn svg path {
-    stroke: var(--text-light); /* Ensure icon is light */
-}
-.view-btn svg g[stroke="#ffffff"] path { /* More specific selector if needed */
-    stroke: var(--text-light); /* Ensure icon is light */
-}
-
-.file-size {
-    font-size: 0.9em;
-    color: var(--text-medium); /* Medium light text */
-}
-
-/* Required Components Section - Dark Theme Adjustments */
-.components-section {
-    background-color: rgba(10, 10, 15, 0.4); /* Darker section background */
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    border-radius: 8px;
+.component-list .resource-item {
     border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.components-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.component-item {
-    background-color: rgba(26, 26, 47, 0.5); /* Dark item background */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Dark theme border */
-    border-radius: 8px;
-    padding: 15px;
-    display: flex;
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: rgba(15, 15, 26, 0.45);
+    flex-direction: row;
     align-items: center;
-    gap: 15px;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    gap: 16px;
 }
 
-.component-item:hover {
-     background-color: rgba(26, 26, 47, 0.7);
-     border-color: rgba(255, 255, 255, 0.15);
+.component-list .resource-item:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(18, 18, 30, 0.6);
 }
 
-.component-image {
+.component-list .resource-link {
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.component-thumb {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Dark theme border */
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.component-details {
-    flex-grow: 1;
+@media (max-width: 600px) {
+    .download-section-minimal {
+        padding: 28px 18px;
+    }
+
+    .resource-item {
+        padding-bottom: 16px;
+    }
+
+    .resource-text {
+        flex-basis: 100%;
+    }
+
+    .resource-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .component-list {
+        grid-template-columns: 1fr;
+    }
+
+    .component-list .resource-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .component-list .resource-link {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .component-thumb {
+        width: 80px;
+        height: 80px;
+    }
 }
 
-.component-details h3 {
-    font-size: 1.2em;
-    margin-bottom: 3px;
-    color: var(--text-light); /* Light text */
-}
-
-.component-details p {
-    font-size: 0.9em;
-    color: var(--text-medium); /* Medium light text */
-    margin: 0;
-}
-
-.component-quantity {
-    font-size: 1em;
-    font-weight: 500;
-    color: var(--text-medium); /* Medium light text */
-    min-width: 30px; /* Ensure alignment */
-    text-align: right;
-}
-
-.cart-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 8px 15px;
-    background-color: var(--accent-gold); /* Use accent color */
-    color: var(--background-dark); /* Dark text */
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-}
-
-.cart-button:hover {
-    background-color: #fff; /* Lighter gold/white */
-}
-
-.cart-icon {
-    font-style: normal; /* Prevent italics if using icon font */
-}
-
-/* Support Section - Dark Theme */
 .support-section {
     text-align: center;
-    padding: 40px 20px;
-    margin-bottom: 30px;
-    background-color: rgba(10, 10, 15, 0.6);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 32px 20px;
+    margin-bottom: 32px;
+    background: rgba(12, 12, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
 }
 
 /* Ensure main content is visible after load */
@@ -1927,3 +1877,4 @@ html {
 }
 
 /* --- End of CSS Document --- */
+
