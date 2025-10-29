@@ -28,6 +28,27 @@
     </header>
 
     <main id="content">
+        <section class="download-section-minimal video-section">
+            <h2>TARS Demo Video</h2>
+            <p>Watch a quick walkthrough while the official upload is in progress.</p>
+            <button id="play-demo" class="resource-link video-button" type="button">
+                Play Demo
+            </button>
+            <div id="video-modal" class="video-modal" aria-hidden="true">
+                <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="TARS Demo Video">
+                    <button id="close-demo" class="video-close" type="button" aria-label="Close video">&times;</button>
+                    <div class="video-embed">
+                        <iframe id="demo-iframe"
+                            data-src="https://drive.google.com/file/d/1FkdYQODeAf2tRBXOLh1QkLiumzQI1Ym0/preview"
+                            allow="autoplay"
+                            allowfullscreen
+                            title="TARS Demo">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="core-downloads" class="download-section-minimal">
             <h2>Core Downloads</h2>
             <p>Grab the essentials you need to get your TARS project running.</p>
@@ -383,8 +404,43 @@
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear().toString();
             }
+
+            const playBtn = document.getElementById('play-demo');
+            const modal = document.getElementById('video-modal');
+            const closeBtn = document.getElementById('close-demo');
+            const iframe = document.getElementById('demo-iframe');
+            const iframeSrc = iframe ? iframe.getAttribute('data-src') : null;
+
+            const openModal = () => {
+                if (!modal || !iframe || !iframeSrc) return;
+                iframe.src = iframeSrc;
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+            };
+
+            const closeModal = () => {
+                if (!modal || !iframe) return;
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                iframe.src = '';
+            };
+
+            if (playBtn) {
+                playBtn.addEventListener('click', openModal);
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
         });
     </script>
 </body>
 </html>
-
